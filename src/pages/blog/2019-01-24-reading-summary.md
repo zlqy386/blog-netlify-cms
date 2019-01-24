@@ -28,7 +28,7 @@ tags:
 
 * Robert C. Martin [代码整洁之道:程序员的职业素养](https://book.douban.com/subject/26919457/)
 
-_**The Clean Code**_ 和 _**The Clean Coder**_ 都强烈推荐。这本书以专业的角度来审视程序员这个职业，振聋发聩。正如书中所说，编程也是一门技艺（craftsmanship），是需要磨砺和传承的。
+**_The Clean Code_** 和 **_The Clean Coder_** 都强烈推荐。这本书以专业的角度来审视程序员这个职业，振聋发聩。正如书中所说，编程也是一门技艺（craftsmanship），是需要磨砺和传承的。
 
 * 阿加莎·克里斯蒂 [尼罗河上的惨案](https://book.douban.com/subject/25697546/)
 
@@ -91,6 +91,8 @@ _**The Clean Code**_ 和 _**The Clean Coder**_ 都强烈推荐。这本书以专
 * 山本崇一朗 [擅長捉弄人的高木同學](https://book.douban.com/series/37823)
 
 狗粮吃到饱。真是青春呀。
+
+![擅長捉弄人的高木同學](/img/からかい上手の高木さん.jpg "擅長捉弄人的高木同學")
 
 * あfろ [搖曳露營△](https://book.douban.com/series/42340)
 
