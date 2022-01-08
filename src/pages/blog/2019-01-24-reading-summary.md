@@ -2,6 +2,8 @@
 templateKey: blog-post
 title: 2018阅读总结
 date: 2019-01-14T00:00:00.000Z
+featuredpost: false
+featuredimage: /img/chemex.jpg
 description: "2018\b正好完成了计划，除去漫画/绘本，平均一周\b看四本书。"
 tags:
   - '2018'

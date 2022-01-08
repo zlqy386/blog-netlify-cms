@@ -5,7 +5,14 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        sassOptions: {
+          indentedSyntax: true,
+        },
+      },
+    },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
@@ -28,6 +35,7 @@ module.exports = {
         name: 'images',
       },
     },
+    `gatsby-plugin-image`,
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
