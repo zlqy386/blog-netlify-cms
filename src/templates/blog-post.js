@@ -18,15 +18,22 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
+    <article
+      className="section" 
+      itemScope
+      itemType="http://schema.org/Article"
+    >
       {helmet || ""}
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+            <h1
+              className="title is-size-2 has-text-weight-bold is-bold-light"
+              itemProp="headline"
+            >
               {title}
             </h1>
-            <p>{description}</p>
+            <p itemProp="abstract">{description}</p>
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
@@ -43,7 +50,7 @@ export const BlogPostTemplate = ({
           </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 };
 
