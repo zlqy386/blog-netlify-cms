@@ -3,11 +3,16 @@ import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
+  id,
+  siteUrl,
+  path,
   content,
   contentComponent,
   description,
@@ -16,6 +21,13 @@ export const BlogPostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
+  const disqusConfig = {
+    url: `${siteUrl+path}`,
+    id,
+    title,
+  }
+
+  console.log(disqusConfig)
 
   return (
     <article
@@ -33,6 +45,7 @@ export const BlogPostTemplate = ({
             >
               {title}
             </h1>
+            <CommentCount config={disqusConfig} placeholder={'...'} />
             <p itemProp="abstract">{description}</p>
             <PostContent content={content} />
             {tags && tags.length ? (
@@ -47,6 +60,7 @@ export const BlogPostTemplate = ({
                 </ul>
               </div>
             ) : null}
+            <Disqus config={disqusConfig} />
           </div>
         </div>
       </div>
@@ -55,6 +69,9 @@ export const BlogPostTemplate = ({
 };
 
 BlogPostTemplate.propTypes = {
+  id: PropTypes.string,
+  siteUrl: PropTypes.string,
+  path: PropTypes.string,
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
@@ -62,12 +79,15 @@ BlogPostTemplate.propTypes = {
   helmet: PropTypes.object,
 };
 
-const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data;
+const BlogPost = ({ data, location }) => {
+  const { markdownRemark: post, site } = data;
 
   return (
     <Layout>
       <BlogPostTemplate
+        id={post.id}
+        siteUrl={site.siteMetadata.siteUrl}
+        path={location.pathname}
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
@@ -90,6 +110,7 @@ const BlogPost = ({ data }) => {
 BlogPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
+    site: PropTypes.object
   }),
 };
 
@@ -97,6 +118,12 @@ export default BlogPost;
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
+    site {
+      siteMetadata {
+        title
+        siteUrl
+      }
+    }
     markdownRemark(id: { eq: $id }) {
       id
       html

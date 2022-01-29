@@ -6,8 +6,8 @@ import classNames from "classnames"
 import github from "../img/github-icon.svg";
 
 const navigation = [
-  { name: 'Blog', href: '/blog', current: true },
-  { name: 'About', href: '/about', current: false },
+  { name: '博客', href: '/blog', current: true },
+  { name: '关于', href: '/about', current: false },
   { name: 'Contact', href: '/contact', current: false },
 ]
 
@@ -20,7 +20,7 @@ const Navbar = () => {
           <div className="relative p-4 flex items-center justify-between sm:p-0">
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex-shrink-0 flex items-center text-lg">
-                <Link to="/">盈昃</Link>
+                <Link to="/">流水落花</Link>
               </div>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
