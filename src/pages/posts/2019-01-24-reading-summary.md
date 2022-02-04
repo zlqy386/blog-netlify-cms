@@ -4,7 +4,7 @@ title: 2018阅读总结
 date: 2019-01-14T00:00:00.000Z
 featuredpost: false
 featuredimage: /img/chemex.jpg
-description: "2018\b正好完成了计划，除去漫画/绘本，平均一周\b看四本书。"
+description: "2018正好完成了计划，除去漫画/绘本，平均一周看四本书。"
 tags:
   - '2018'
   - 阅读
@@ -16,7 +16,7 @@ tags:
 
 偏意识流，情节很散，但里面描绘的社会实在让人后怕。但愿将来的我们仍能保有自己的想象力。
 
-> ”它并非一本一流的书，但无疑是本不寻常的书“ —— 乔治•奥威尔
+> “它并非一本一流的书，但无疑是本不寻常的书” —— 乔治•奥威尔
 
 * Lea Verou [CSS揭秘](https://book.douban.com/subject/26745943/)
 
@@ -30,7 +30,7 @@ tags:
 
 * Robert C. Martin [代码整洁之道:程序员的职业素养](https://book.douban.com/subject/26919457/)
 
-**_The Clean Code_** 和 **_The Clean Coder_** 都强烈推荐。这本书以专业的角度来审视程序员这个职业，振聋发聩。正如书中所说，编程也是一门技艺（craftsmanship），是需要磨砺和传承的。
+**The Clean Code** 和 **The Clean Coder** 都强烈推荐。这本书以专业的角度来审视程序员这个职业，振聋发聩。正如书中所说，编程也是一门技艺（craftsmanship），是需要磨砺和传承的。
 
 * 阿加莎·克里斯蒂 [尼罗河上的惨案](https://book.douban.com/subject/25697546/)
 
@@ -39,7 +39,7 @@ tags:
 > La vie est irréelle.
 > 人生虛幻。
 >
-> Certains un peu d’amour,
+> Certains un peu d'amour,
 > 有一点爱情，
 >
 > Certains petits hatreds,
@@ -74,7 +74,7 @@ tags:
 
 * Charles Petzold [编码](https://book.douban.com/subject/4822685/)
 
-从编码到可以运行的计算机，深入浅出地介绍了计算机组成。简明又不失深度，很适合作为入门书，要是本科时能看到就好了。
+从编码到可以运行的计算机，深入浅出地介绍了计算机组成。简明又不失深度，很适合作为入门书，要是本科时能看到就好了。
 
 * 贵志祐介 [来自新世界](https://book.douban.com/subject/25752955/)
 
@@ -94,17 +94,17 @@ tags:
 
 狗粮吃到饱。真是青春呀。
 
-![擅長捉弄人的高木同學](/img/からかい上手の高木さん.jpg "擅長捉弄人的高木同學")
+![擅長捉弄人的高木同學](/img/からかい上手の高木さん.jpg)
 
 * あfろ [搖曳露營△](https://book.douban.com/series/42340)
 
-典型的芳文社题材（girls story），却也是很硬核的露营和美食向作品。要不是户外的成本太高，没准真跑出去露营了。
+典型的芳文社题材（girls story），却也是很硬核的露营和美食向作品。要不是户外的成本太高，没准真跑出去露营了。
 
 * つくみず [少女終末旅行](https://book.douban.com/series/40616)
 
 在满是遗迹，连人也见不到的末日，活着的意义是什么？
 
-> もっと絶望と仲よくなろうよ 要和絕望好好相處喔。
+> もっと絶望と仲よくなろうよ。 要和絕望好好相處喔。
 
 * ばらスィー [苺ましまろ](https://book.douban.com/series/14848)
 

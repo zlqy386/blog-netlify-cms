@@ -51,11 +51,11 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel="stylesheet"
           media="all"
-          href="//cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.css"
+          href="//cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css"
         />
       </Helmet>
       <Navbar />
-      <div>{children}</div>
+      <div className="container">{children}</div>
       <Footer />
     </div>
   );
