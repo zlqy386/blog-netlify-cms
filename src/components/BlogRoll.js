@@ -14,22 +14,20 @@ class BlogRollTemplate extends React.Component {
           posts.map(({ node: post }) => (
             <div className="is-parent column is-6" key={post.id}>
               <article
-                className={`blog-list-item tile is-child box notification ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
+                className={`blog-list-item tile is-child box notification`}
               >
                 <header>
                   {post.frontmatter.featuredimage ? (
                     <div className="featured-thumbnail">
                       <PreviewCompatibleImage
                         imageInfo={{
-                          image: post.frontmatter.featuredimage,
+                          image: post.frontmatter.cover,
                           alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                           width:
-                            post.frontmatter.featuredimage.childImageSharp
+                            post.frontmatter.cover.childImageSharp
                               .gatsbyImageData.width,
                           height:
-                            post.frontmatter.featuredimage.childImageSharp
+                            post.frontmatter.cover.childImageSharp
                               .gatsbyImageData.height,
                         }}
                       />
@@ -92,9 +90,8 @@ export default function BlogRoll() {
                 frontmatter {
                   title
                   templateKey
-                  date(formatString: "MMMM DD, YYYY")
-                  featuredpost
-                  featuredimage {
+                  date(formatString: "YYYY.MM.DD")
+                  cover {
                     childImageSharp {
                       gatsbyImageData(
                         width: 120

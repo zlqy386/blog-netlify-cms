@@ -5,11 +5,11 @@ const Footer = class extends React.Component {
     return (
       <>
       <hr/>
-        <footer className="text-center w-full py-4">
+        <footer className="w-full py-4 text-center">
           <p>
-            Powered by <a title="Gatsby" href="https://www.gatsbyjs.com/">Gatsby</a>
+            Powered by <a className="text-blue-600 underline hover:text-blue-500" title="Gatsby" href="https://www.gatsbyjs.com/">Gatsby</a>
             <span> and </span>
-            <a title="Netlify CMS" href="https://www.netlifycms.org/">Netlify CMS</a>.
+            <a className="text-blue-600 underline hover:text-blue-500" title="Netlify CMS" href="https://www.netlifycms.org/">Netlify CMS</a>.
           </p>
         </footer>
       </>

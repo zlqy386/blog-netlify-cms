@@ -2,8 +2,7 @@
 templateKey: blog-post
 title: 2018阅读总结
 date: 2019-01-14T00:00:00.000Z
-featuredpost: false
-featuredimage: /img/chemex.jpg
+cover: /img/unsplash/tom-hermans-9BoqXzEeQqM-unsplash.jpeg
 description: "2018正好完成了计划，除去漫画/绘本，平均一周看四本书。"
 tags:
   - '2018'

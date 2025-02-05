@@ -4,8 +4,8 @@ import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
-import { CalendarIcon, ChatAlt2Icon } from '@heroicons/react/solid'
-
+// import { CalendarIcon, ChatAlt2Icon } from '@heroicons/react/solid'
+// import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
@@ -14,6 +14,7 @@ import Content, { HTMLContent } from "../components/Content";
 export const BlogPostTemplate = ({
   content,
   contentComponent,
+  cover,
   date,
   description,
   helmet,
@@ -38,13 +39,17 @@ export const BlogPostTemplate = ({
       itemType="http://schema.org/Article"
     >
       {helmet || ""}
-      <div className="flex gap-4">
-        <div className="flex items-center gap-2"><CalendarIcon className="inline-block w-5 h-5"/><span>{date}</span></div>
-        <div className="flex items-center gap-2"><ChatAlt2Icon className="inline-block w-5 h-5"/><CommentCount config={disqusConfig} placeholder={'...'} /></div>
+      {/* <GatsbyImage image={getImage(cover.childImageSharp)} alt="cover" /> */}
+      <div className="flex gap-2">
+        {/* <div className="flex items-center gap-2"><CalendarIcon className="inline-block w-5 h-5"/><span>{date}</span></div>
+        <div className="flex items-center gap-2"><ChatAlt2Icon className="inline-block w-5 h-5"/><CommentCount config={disqusConfig} placeholder={'...'} /></div> */}
+        <span>{date}</span>
+        <span>•</span>
+        <span><CommentCount config={disqusConfig} /></span>
       </div>
       {tags && tags.length ? (
         <div className="py-2 not-prose">
-          <ul className="flex gap-2">
+          <ul className="flex gap-2 pl-0">
             {tags.map((tag) => (
               <li key={tag + `tag`} className="inline-block px-2 py-1 text-xs text-white bg-teal-600 rounded">
                 <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
@@ -58,10 +63,13 @@ export const BlogPostTemplate = ({
       <div className="content">
         <PostContent content={content} />
         <p className="copyright">
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/">
             <img className="inline" alt="知识共享许可协议" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
           </a>
-          本文由<a href="mailto:zy3861@163.com">张杨</a>采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。转载请注明出处，感谢配合！
+          <span>
+            &nbsp;&nbsp;本文由<a href="mailto:zy3861@163.com">张杨</a>采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。
+            转载请注明出处，感谢配合！
+          </span>
         </p>
         <Disqus config={disqusConfig} />
       </div>
@@ -70,15 +78,16 @@ export const BlogPostTemplate = ({
 };
 
 BlogPostTemplate.propTypes = {
-  id: PropTypes.string,
-  siteUrl: PropTypes.string,
-  path: PropTypes.string,
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
+  cover: PropTypes.object,
+  date: PropTypes.string,
   description: PropTypes.string,
-  title: PropTypes.string,
   helmet: PropTypes.object,
-  date: PropTypes.string
+  id: PropTypes.string,
+  path: PropTypes.string,
+  siteUrl: PropTypes.string,
+  title: PropTypes.string,
 };
 
 const BlogPost = ({ data, location }) => {
@@ -92,6 +101,7 @@ const BlogPost = ({ data, location }) => {
         path={location.pathname}
         content={post.html}
         contentComponent={HTMLContent}
+        cover={post.frontmatter.cover}
         description={post.frontmatter.description}
         helmet={
           <Helmet titleTemplate="%s | Blog">
@@ -131,6 +141,13 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
+        cover {
+          childImageSharp {
+            gatsbyImageData(
+              layout: FULL_WIDTH
+            )
+          }
+        },
         date(formatString: "YYYY.MM.DD")
         title
         description
